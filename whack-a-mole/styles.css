@@ -1,0 +1,26 @@
+.grid {
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0; 
+}
+
+.square {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mole {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://github.com/Kalvium-Program/Image-files/blob/main/mole.jpg?raw=true');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
+}
