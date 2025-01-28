@@ -1,40 +1,136 @@
-.grid{
-    border: 1px solid black;
-    height: 180px;
-    width: 180px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
 }
 
-.grid div{
-    height: 20px;
+h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#time-left, #result {
+    font-weight: bold;
+}
+
+#time-left, #result, #start-pause-button, #reset-button {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#start-pause-button, #reset-button {
+    font-size: 16px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#start-pause-button:hover, #reset-button:hover {
+    background-color: #ff7043;
+}
+
+.grid {
+    border: 2px solid #333;
+    display: grid;
+    grid-template-columns: repeat(9, 20px); /* 9 columns with 20px each */
+    grid-template-rows: repeat(9, 20px);    /* 9 rows with 20px each */
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+.grid div {
     width: 20px;
+    height: 20px;
 }
 
-.ending-block{
+
+.ending-block {
     background-color: red;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-.starting-block{
-    background-color: blue;
-}
-
-.l1, .l2, .l3{
+.l1, .l2, .l3 {
     background-color: brown;
 }
 
-.l4, .l5{
+.l4, .l5 {
     background-color: lightblue;
 }
 
-.c1{
+.c1 {
     background-color: black;
 }
 
-.c2, .c3{
+.c2, .c3 {
     background-color: lightgray;
 }
 
-.frog{
+/* Flexbox setup for centering */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-size: 16px;
+    padding: 12px 24px;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff7043;
+}
+
+.frog {
     background-color: green;
+    border-radius: 50%;
+}
+
+/* Small screen adjustments */
+@media (max-width: 600px) {
+    .grid {
+        height: 150px;
+        width: 150px;
+    }
+
+    .grid div {
+        width: 16px;
+        height: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }
