@@ -1,0 +1,97 @@
+/* General reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.score {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Grid Styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);  /* 4 columns */
+    grid-template-rows: repeat(3, 100px);  /* 3 rows */
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Card Styling */
+.card {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
+/* Add flip effect on card */
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Hidden class for matched cards */
+.hidden {
+    visibility: hidden;
+}
+
+/* Card Back Styling */
+.card .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(4, 80px); /* Smaller grid cells */
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+    }
+}
